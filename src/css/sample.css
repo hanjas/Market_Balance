@@ -1,0 +1,65 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.button{
+    -fx-border-width:0;
+    -fx-background-radius:0;
+}
+.list-cell {
+    -fx-font: 15px "Segoe UI Semibold";
+    -fx-border-width:0;
+    -fx-border-color:transparent;
+}
+.list-cell:filled:hover {
+    -fx-background-color:#454B4C;
+    -fx-text-fill: white;
+}
+.table-view .table-cell {
+    -fx-alignment: CENTER;
+}
+.table-view .column-header {
+    -fx-background-color: #bdc3c7;
+    -fx-font-size: 12;
+}
+.table-cell {
+    -fx-font-size: 15px;
+}
+#nameLabel {
+    -fx-pref-width:200;
+    -fx-font-size: 18pt;
+}
+#totalDebitLabel, #totalSaleLabel, #totalBalanceLabel {
+    -fx-pref-width:400;
+    -fx-font-size: 18pt;
+}
+#loginPage {
+    -fx-background-image: url('/icons/background2.jpg');
+    -fx-background-position: center center;
+    -fx-background-size: cover;
+}
+#loginLabel , #loginLabel2 {
+    -fx-font: 20px "Segoe UI Semibold";
+    -fx-text-fill: white;
+}
+#userNameField , #passField {
+    -fx-font: 12px "Segoe UI Semibold";
+}
+#bczLabel {
+    -fx-text-fill: white;
+}
+#incorrectLabel {
+    -fx-font: 15px "Segoe UI Semibold";
+    -fx-text-fill: red;
+}
+/*#welcome {
+    -fx-background-image: url('/icons/background2.jpg');
+    -fx-background-position: center center;
+    -fx-background-size: cover;
+}
+.label {
+    -fx-text-fill: white;
+}
+.table-view .label {
+    -fx-text-fill: black;
+}*/

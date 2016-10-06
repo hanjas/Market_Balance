@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.*?>
+
+<BorderPane fx:id="mainBorder"  xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.IndividualController">
+    <padding><Insets top="10" bottom="10" left="10" right="10" /> </padding>
+    
+                                  <!-- Left part of individual view -->
+                                  
+    <left>
+        <GridPane fx:id="leftGrid" vgap="10" >
+            <Label text="Members" prefHeight="30" prefWidth="200" alignment="CENTER"  style="-fx-background-color:#a7a7a7; -fx-font-size:16;" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <ListView fx:id="listView" onMouseClicked="#getDetails"   prefWidth="200" GridPane.columnIndex="0" GridPane.rowIndex="1"  />
+            <GridPane vgap="5"  GridPane.columnIndex="0" GridPane.rowIndex="3" >
+                <Button text="Add Member" fx:id="addMemberBtn" onAction="#addMember"  prefWidth="200"  GridPane.columnIndex="0" GridPane.rowIndex="0"  /> 
+                <Button text="Remove Member" fx:id="removeMemberBtn" onAction="#removeMember"  prefWidth="200"  GridPane.columnIndex="0" GridPane.rowIndex="1" /> 
+            </GridPane>
+        </GridPane> 
+    </left>
+    
+                                  <!-- Center part of individual view -->
+    
+    <center>
+        
+        <BorderPane fx:id="centerBorder" >
+            <padding><Insets left="10"  /> </padding>
+            <top>
+                <BorderPane >
+                    <padding><Insets bottom="7"  /> </padding>
+                    <left>
+                        <Label text="" fx:id="nameLabel" prefWidth="450" minWidth="400"  />  
+                    </left>
+                    <center>
+                        <GridPane alignment="CENTER" hgap="5"  >
+                            <Button fx:id="prevDateBtn" onAction="#prevMonth"  GridPane.columnIndex="0" GridPane.rowIndex="0"  />
+                            <Label fx:id="dateLabel" text="dd-mm-yyyy"  GridPane.columnIndex="1" GridPane.rowIndex="0"  />
+                            <Button fx:id="nextDateBtn" text=">" onAction="#nextMonth"  GridPane.columnIndex="2" GridPane.rowIndex="0"  />
+                        </GridPane>
+                    </center>
+                    <right>
+                        <GridPane hgap="5" alignment="CENTER_RIGHT"   >
+                            <ImageView fx:id="processImageView" GridPane.columnIndex="0" GridPane.rowIndex="0" >
+                                <image >
+                                    <Image url="/icons/process.gif"/>
+                                </image>
+                            </ImageView>
+                            <Button fx:id="printB" onAction="#print" GridPane.columnIndex="1" GridPane.rowIndex="0" >
+                                <graphic >
+                                    <ImageView  >
+                                        <image >
+                                            <Image url="/icons/printer.png"/>
+                                        </image>
+                                    </ImageView>
+                                </graphic>
+                            </Button>
+                            <Button fx:id="addReportBtn" text="Add Report" prefHeight="28" onAction="#addReport"   GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                            <Button fx:id="addDebitBtn" text="Add Debit" prefHeight="28" onAction="#addDebit"   GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                        </GridPane>
+                    </right>
+                </BorderPane>
+            </top>
+
+            <center>
+                <TableView fx:id="tableView"   >
+                    <columns >
+                        <TableColumn fx:id="col1" text="Date"  prefWidth="123" >
+                            <cellValueFactory><PropertyValueFactory property="Date" />
+                            </cellValueFactory>
+                        </TableColumn> 
+
+                        <TableColumn fx:id="col2" text="OldBal"  prefWidth="123" >
+                            <cellValueFactory><PropertyValueFactory property="Old" />
+                            </cellValueFactory>
+                        </TableColumn> 
+
+                        <TableColumn fx:id="col3" text="Today"   prefWidth="123" >
+                            <cellValueFactory><PropertyValueFactory property="Today" />
+                            </cellValueFactory>
+                        </TableColumn> 
+
+                        <TableColumn fx:id="col4" text="Total"  prefWidth="123"  >
+                            <cellValueFactory><PropertyValueFactory property="Total" />
+                            </cellValueFactory>
+                        </TableColumn> 
+
+                        <TableColumn fx:id="col5" text="Debit"  prefWidth="123"  >
+                            <cellValueFactory><PropertyValueFactory property="Debit" />
+                            </cellValueFactory>
+                        </TableColumn> 
+
+                        <TableColumn fx:id="col6" text="Balance"  prefWidth="123"  >
+                            <cellValueFactory><PropertyValueFactory property="Balance" />
+                            </cellValueFactory>
+                        </TableColumn> 
+                    </columns>
+                </TableView>
+            </center>
+
+        </BorderPane>
+    </center>
+    
+</BorderPane>

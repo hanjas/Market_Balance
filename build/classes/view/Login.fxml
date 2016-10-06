@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.validation.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="loginPage" prefHeight="400" prefWidth="400" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controller.LoginController">
+    <stylesheets>
+        <URL value="@/css/sample.css" />
+    </stylesheets>
+    <padding>
+        <javafx.geometry.Insets bottom="10" left="10" right="10" top="10" /> 
+    </padding>
+    <center>
+        <GridPane alignment="CENTER" hgap="5" vgap="5">
+           <children>
+               <Label fx:id="loginLabel" text="Username" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+               <TextField fx:id="userNameField"  onAction="#tabKey"  GridPane.columnIndex="1" GridPane.rowIndex="0" />
+   
+               <Label fx:id="loginLabel2" text="Password" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+               <PasswordField fx:id="passField"  onAction="#tabKey"  GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               
+               <BorderPane GridPane.columnIndex="1" GridPane.rowIndex="2">
+                   <left>
+                       <Label fx:id="incorrectLabel" text="incorrect input" visible="false"  />
+                   </left>
+                   <right>
+                       <Button text="Login" onAction="#login"  onKeyPressed="#login" />
+                   </right>
+               </BorderPane>
+           </children>
+        </GridPane> 
+    </center>
+    <bottom>
+        <Label fx:id="bczLabel" text="powered by BlueCipherz" /> 
+    </bottom>
+</BorderPane>

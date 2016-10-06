@@ -1,0 +1,10 @@
+.table-view .table-cell {
+    -fx-alignment: CENTER;
+}
+.table-view .column-header {
+    -fx-background-color: #bdc3c7;
+    -fx-font-size: 8;
+}
+.table-cell {
+    -fx-font-size: 8px;
+}

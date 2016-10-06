@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.*?>
+
+<BorderPane id="mainBorder" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DayListController">
+    <padding> <Insets left="20" right="20" top="20" /> </padding>
+    <top>
+        <BorderPane >
+            <padding><Insets bottom="7"  /> </padding>
+            <left>
+                <Label text="DayList" fx:id="nameLabel" prefWidth="250" minWidth="100"  />  
+            </left>
+            <center>
+                <GridPane alignment="CENTER" hgap="5"  >
+                    <Button fx:id="prevDateBtn" onAction="#prevDate" GridPane.columnIndex="0" GridPane.rowIndex="0"  />
+                    <Label fx:id="dateLabel" text="dd-mm-yyyy"  GridPane.columnIndex="1" GridPane.rowIndex="0"  />
+                    <Button fx:id="nextDateBtn" onAction="#nextDate" text=">"   GridPane.columnIndex="2" GridPane.rowIndex="0"  />
+                </GridPane>
+            </center>
+            <right>
+                <GridPane fx:id="refreshGrid" hgap="5" alignment="CENTER_RIGHT"   >
+                    <Button fx:id="printB" onAction="#print"  GridPane.columnIndex="1" GridPane.rowIndex="0" >
+                        <graphic >
+                            <ImageView  >
+                                <image >
+                                    <Image url="/icons/printer.png"/>
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="refresh" text="Refresh" prefHeight="28" onAction="#setProcess"  GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                    <Button fx:id="delete" text="Delete" prefHeight="28" onAction="#delete"  GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                </GridPane>
+            </right>
+        </BorderPane>
+    </top>
+    
+    <center>
+        <TableView fx:id="tableView"   >
+            <columns >
+                <TableColumn fx:id="col1" text="Name"  prefWidth="123" >
+                    <cellValueFactory><PropertyValueFactory property="Name" />
+                    </cellValueFactory>
+                </TableColumn>  
+
+                <TableColumn fx:id="col2" text="OldBal"  prefWidth="123" >
+                    <cellValueFactory><PropertyValueFactory property="Old" />
+                    </cellValueFactory>
+                </TableColumn> 
+
+                <TableColumn fx:id="col3" text="Today"   prefWidth="123" >
+                    <cellValueFactory><PropertyValueFactory property="Today" />
+                    </cellValueFactory>
+                </TableColumn> 
+
+                <TableColumn fx:id="col4" text="Total"  prefWidth="123"  >
+                    <cellValueFactory><PropertyValueFactory property="Total" />
+                    </cellValueFactory>
+                </TableColumn> 
+
+                <TableColumn fx:id="col5" text="Debit"  prefWidth="123"  >
+                    <cellValueFactory><PropertyValueFactory property="Debit" />
+                    </cellValueFactory>
+                </TableColumn> 
+
+                <TableColumn fx:id="col6" text="Balance"  prefWidth="123"  >
+                    <cellValueFactory><PropertyValueFactory property="Balance" />
+                    </cellValueFactory>
+                </TableColumn> 
+            </columns>
+        </TableView>
+    </center>
+    
+    <bottom>
+        <BorderPane >
+            <padding> <Insets bottom="10" left="10" right="30" top="10" /> </padding>
+            <right>
+                <GridPane >
+                    <Label text="TotalDebit = :" prefWidth="200" fx:id="totalDebitLabel" GridPane.columnIndex="0" GridPane.rowIndex="0" /> 
+                    <Label text="TotalBalance = :" prefWidth="200" fx:id="totalSaleLabel" GridPane.columnIndex="1" GridPane.rowIndex="0" /> 
+                </GridPane>
+            </right>
+        </BorderPane>
+    </bottom>
+</BorderPane>

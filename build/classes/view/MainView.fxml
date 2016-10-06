@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="welcome"  xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainViewController" >
+    <stylesheets>
+        <URL value="@/css/sample.css"/>
+    </stylesheets>
+    <children>
+        <TabPane tabMinWidth="100" >
+            <tabs>
+                <Tab closable="false" text="Individual">
+                    <content><fx:include source="/view/Individual.fxml"/></content>
+                </Tab>  
+                <Tab closable="false" text="DayList">
+                    <content><fx:include source="/view/DayList.fxml"/></content>
+                </Tab>
+                <Tab closable="false" text="BalanceSheet">
+                    <content><fx:include source="/view/BalanceSheet.fxml"/></content>
+                </Tab>
+            </tabs>
+        </TabPane> 
+    </children>
+</VBox>
